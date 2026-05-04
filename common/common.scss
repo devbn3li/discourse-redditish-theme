@@ -163,6 +163,11 @@ body {
   padding-left: 0;
 }
 
+.sidebar-section-wrapper[data-section-name="tags"],
+.sidebar-section-wrapper[data-section-name="categories"] {
+  display: none !important;
+}
+
 .sidebar-section-link-wrapper button {
   border-radius: 0;
   padding: 0 var(--d-sidebar-row-horizontal-padding) !important; // overrides button specificity
