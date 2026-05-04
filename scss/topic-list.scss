@@ -45,10 +45,44 @@ body.category,
 }
 
 #navigation-bar {
-  width: 100%;
+  display: inline-flex;
+  gap: 1em;
   margin: 0 0 1em 0;
+  padding: 0;
+  border: none;
+  background: transparent;
 
-  @include custom-card;
+  li {
+    margin: 0;
+    
+    a {
+      padding: 0.5em 1em;
+      border-radius: var(--d-button-border-radius);
+      font-weight: bold;
+      color: var(--primary-medium);
+      border: none !important;
+      box-shadow: none !important;
+      
+      &::after,
+      &::before {
+        display: none !important;
+      }
+      
+      &:hover {
+        background: var(--primary-low);
+        color: var(--primary);
+        border: none !important;
+        box-shadow: none !important;
+      }
+      
+      &.active {
+        background: var(--tertiary-low);
+        color: var(--tertiary);
+        border: none !important;
+        box-shadow: none !important;
+      }
+    }
+  }
 }
 
 .list-controls {

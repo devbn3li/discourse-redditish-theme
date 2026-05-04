@@ -68,37 +68,6 @@ export default class Item extends Component {
   <template>
     {{! template-lint-disable no-invalid-interactive }}
     <div {{on "click" this.openTopic}} class="custom-topic-layout">
-      <div class="custom-topic-layout_meta">
-        {{#unless @outletArgs.hideCategory}}
-          {{#unless @outletArgs.topic.isPinnedUncategorized}}
-            <PluginOutlet
-              @name="topic-list-before-category"
-              @outletArgs={{lazyHash topic=@outletArgs.topic}}
-            />
-            {{categoryLink @outletArgs.topic.category}}
-            <span class="bullet-separator">&bull;</span>
-          {{/unless}}
-        {{/unless}}
-
-        <span class="custom-topic-layout_meta-posted">
-          <span class="custom-topic-layout_meta-posted-by">
-            {{i18n (themePrefix "posted_by")}}
-          </span>
-
-          <a
-            data-user-card={{get @outletArgs "topic.posters.0.user.username"}}
-            href="/u/{{get @outletArgs 'topic.posters.0.user.username'}}"
-          >@{{get @outletArgs "topic.posters.0.user.username"}}</a>
-
-          {{formatDate
-            @outletArgs.topic.createdAt
-            format="medium"
-            noTitle="true"
-            leaveAgo="true"
-          }}
-        </span>
-      </div>
-
       <h2 class="link-top-line">
         <TopicStatus @topic={{@outletArgs.topic}} />
 
@@ -153,6 +122,37 @@ export default class Item extends Component {
           <TopicExcerpt @topic={{@outletArgs.topic}} />
         </div>
       {{/unless}}
+
+      <div class="custom-topic-layout_meta">
+        {{#unless @outletArgs.hideCategory}}
+          {{#unless @outletArgs.topic.isPinnedUncategorized}}
+            <PluginOutlet
+              @name="topic-list-before-category"
+              @outletArgs={{lazyHash topic=@outletArgs.topic}}
+            />
+            {{categoryLink @outletArgs.topic.category}}
+            <span class="bullet-separator">&bull;</span>
+          {{/unless}}
+        {{/unless}}
+
+        <span class="custom-topic-layout_meta-posted">
+          <span class="custom-topic-layout_meta-posted-by">
+            {{i18n (themePrefix "posted_by")}}
+          </span>
+
+          <a
+            data-user-card={{get @outletArgs "topic.posters.0.user.username"}}
+            href="/u/{{get @outletArgs 'topic.posters.0.user.username'}}"
+          >@{{get @outletArgs "topic.posters.0.user.username"}}</a>
+
+          {{formatDate
+            @outletArgs.topic.createdAt
+            format="medium"
+            noTitle="true"
+            leaveAgo="true"
+          }}
+        </span>
+      </div>
 
       <div class="custom-topic-layout_bottom-bar">
         <span class="reply-count">

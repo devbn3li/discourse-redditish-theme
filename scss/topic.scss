@@ -231,12 +231,10 @@
   border-radius: 0;
 }
 
-h3.suggested-topics-message {
-  font-weight: normal;
-}
-
-.more-topics__container .nav {
-  position: relative;
+.more-topics__container,
+.suggested-topics-wrapper,
+.topic-above-suggested-outlet {
+  display: none !important;
 }
 
 html:not(.footer-nav-visible) #topic-progress-wrapper {
