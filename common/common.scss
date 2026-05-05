@@ -8,15 +8,15 @@
 @mixin custom-card {
   box-sizing: border-box;
   padding: 0.75em;
-  border-radius: 0.25em;
-  border: 1px solid var(--redditish-border-color);
+  border-radius: 0.85em;
+  border: 1px solid #1a2267;
   background: var(--secondary);
 
   @content;
 
   .discourse-no-touch & {
     &:hover {
-      border: 1px solid var(--redditish-border-highlight-color);
+      border: 1px solid #111747;
     }
   }
 }
@@ -166,6 +166,28 @@ body {
 .sidebar-section-wrapper[data-section-name="tags"],
 .sidebar-section-wrapper[data-section-name="categories"] {
   display: none !important;
+}
+
+body:not(.staff) .sidebar-section-link-wrapper[data-link-name="more"],
+body:not(.staff) .sidebar-more-section-links-details-summary,
+body:not(.staff) button.sidebar-more-section-links-details-summary {
+  display: none !important;
+}
+
+body {
+  background-color: var(--secondary) !important;
+}
+
+.login-button,
+.sign-up-button {
+  background-color: #1a2267 !important;
+  color: #ffffff !important;
+  border-color: #1a2267 !important;
+  
+  &:hover {
+    background-color: #111747 !important;
+    border-color: #111747 !important;
+  }
 }
 
 .sidebar-section-link-wrapper button {
