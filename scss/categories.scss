@@ -6,8 +6,19 @@
 
 .categories-and-latest,
 .categories-and-top {
+  .latest-topic-list {
+    display: none !important;
+  }
+
+  .column {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+
   .category-list {
     border: none;
+    width: 100% !important;
 
     .discourse-no-touch & {
       &:hover {
