@@ -210,9 +210,27 @@ body {
 }
 
 .powered-by-discourse {
-  border: 1px solid var(--primary-500);
-  grid-area: content;
-  align-self: end;
+  display: none !important;
+}
+
+.sidebar-section-divider,
+.sidebar-section-wrapper {
+  border-bottom: none !important;
+}
+.sidebar-section-divider {
+  display: none !important;
+}
+
+body:not(.staff) .header-sidebar-toggle {
+  display: none !important;
+}
+
+.d-header .search-advanced-btn,
+.search-menu .show-advanced-search,
+.search-menu .advanced-search-button,
+.search-context,
+.search-advanced-options {
+  display: none !important;
 }
 
 html.composer-open #main-outlet {

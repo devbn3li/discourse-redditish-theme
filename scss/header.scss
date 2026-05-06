@@ -51,3 +51,11 @@
   font-size: var(--font-up-2);
   color: var(--primary-medium);
 }
+
+body:not(.staff) .home-logo-wrapper-outlet,
+body:not(.staff) .d-header .title,
+body:not(.staff) .d-header .title a,
+body:not(.staff) .d-header .title img {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
