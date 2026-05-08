@@ -52,10 +52,26 @@
   color: var(--primary-medium);
 }
 
-body:not(.staff) .home-logo-wrapper-outlet,
-body:not(.staff) .d-header .title,
-body:not(.staff) .d-header .title a,
-body:not(.staff) .d-header .title img {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
+.d-header .contents {
+  position: relative;
+}
+
+// Center the logo by targeting .title directly (resilient to outlet wrapper display:contents)
+.d-header .contents .title {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 1;
+}
+
+.d-header .header-sidebar-toggle {
+  position: relative;
+  z-index: 2;
+}
+
+.d-header .panel {
+  margin-left: auto !important;
+  position: relative;
+  z-index: 2;
 }
