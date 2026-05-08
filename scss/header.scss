@@ -65,6 +65,13 @@
   z-index: 1;
 }
 
+@media screen and (width <= 768px) {
+  .d-header .contents .title {
+    left: 0.85em !important;
+    transform: translate(0, -50%) !important;
+  }
+}
+
 .d-header .header-sidebar-toggle {
   position: relative;
   z-index: 2;
